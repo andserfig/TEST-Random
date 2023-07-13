@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'hodeiastep1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_80C986FB3F564C0399B09F10060859D9 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           package: .
