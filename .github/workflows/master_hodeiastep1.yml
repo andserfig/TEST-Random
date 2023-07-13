@@ -43,7 +43,7 @@ jobs:
   
     steps:
       - name: Download artifact from build job
-        uses: azure/login@v1
+        uses: actions/download-artifact@v2
         with:
           name: .net-app
           creds: ${{ secrets.AZURE_CREDENTIALS }}
