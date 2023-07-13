@@ -43,15 +43,16 @@ jobs:
   
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v2
+        uses: azure/login@v1
         with:
           name: .net-app
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/login@v1
         with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           app-name: 'hodeiastep1'
           slot-name: 'Production'
           package: .
